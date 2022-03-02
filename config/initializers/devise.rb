@@ -274,7 +274,8 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   config.omniauth :google_oauth2, Rails.application.credentials.config[:google][:google_app_id], Rails.application.credentials.config[:google][:google_secret_key], {}
   config.omniauth :facebook, Rails.application.credentials[:facebook][:facebook_id], Rails.application.credentials[:facebook][:facebook_secret_key], {}
-  config.omniauth :github, Rails.application.credentials[:github][:github_id], Rails.application.credentials[:github][:github_secret_key], {}
+  config.omniauth :github, Rails.application.credentials[:github][:github_id], Rails.application.credentials[:github][:github_secret_key], scope: 'user,public_repo'
+  config.omniauth :discord, Rails.application.credentials[:discord][:discord_id], Rails.application.credentials[:discord][:discord_secret_key], scope: 'email'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
@@ -312,5 +313,6 @@ Devise.setup do |config|
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
 end
+
 
 
