@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: [:google_oauth2, :facebook, :github, :discord]
+         :omniauthable, omniauth_providers: [:google_oauth2, :facebook, :github, :discord, :linkedin]
 
   def self.from_omniauth(oauth_token)
 		data = oauth_token.info

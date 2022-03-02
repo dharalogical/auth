@@ -276,6 +276,7 @@ Devise.setup do |config|
   config.omniauth :facebook, Rails.application.credentials[:facebook][:facebook_id], Rails.application.credentials[:facebook][:facebook_secret_key], {}
   config.omniauth :github, Rails.application.credentials[:github][:github_id], Rails.application.credentials[:github][:github_secret_key], scope: 'user,public_repo'
   config.omniauth :discord, Rails.application.credentials[:discord][:discord_id], Rails.application.credentials[:discord][:discord_secret_key], scope: 'email'
+  config.omniauth :linkedin, Rails.application.credentials[:linkedin][:linkedin_id], Rails.application.credentials[:linkedin][:linkedin_secret_key], scope: 'r_emailaddress'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

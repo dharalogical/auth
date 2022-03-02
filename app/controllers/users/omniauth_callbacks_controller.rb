@@ -44,6 +44,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     handle_auth "discord"
   end
 
+  def linkedin
+    handle_auth "linkedin"
+  end
+
+
   def handle_auth(kind)
     @user = User.from_omniauth(request.env["omniauth.auth"])
     if @user.persisted?
